@@ -1,0 +1,1 @@
+export type AlertTypes = "alert-default" | "alert-success" | "alert-info" | "alert-warning" | "alert-error";

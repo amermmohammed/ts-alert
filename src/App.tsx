@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Ban, Bell, Info} from "lucide-react";
+import Alerts from "./components/ui/Alert/Alerts.tsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <div>
+            <Alerts type={"alert-error"} icon={<Ban size={20}/>}
+                    title={"Something went wrong"}
+            >
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, <a href="/">Test Link</a> voluptatum
+                </p>
+            </Alerts>
+            <Alerts type={"alert-warning"} icon={<Info size={20}/>} title={"Something went wrong"}
+                    description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum " +
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}/>
+            <Alerts type={"alert-info"} icon={<Info size={20}/>} title={"Something went wrong"}
+                    description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum " +
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}/>
+            <Alerts type={"alert-success"} icon={<Ban size={20}/>} title={"Something went wrong"}
+                    description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum " +
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}/>
+            <Alerts type={"alert-default"} icon={<Bell size={20}/>} title={"Something went wrong"}
+                    description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum " +
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."}/>
+        </div>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;
